@@ -1,6 +1,7 @@
 import Header from '../components/header'
 import Footer from '../components/footer'
 import { getParam } from '../components/utils.mjs'
+import { getIronSession } from 'iron-session'
 
 export default function Account() {
     return (
@@ -17,14 +18,14 @@ export default function Account() {
                     <fieldset className="login-form-fieldset">
                         <label className="block">
                         Email<span className="asterisk">*</span>
-                        <input className="block border-2 border-black" type="email" name="clientEmail" required="" placeholder="" />
+                        <input className="block border-2 border-black" type="email" name="email" required="" placeholder="" />
                         </label>
                         <label className="block" title="Passwords must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character">
                         Password<span className="asterisk">*</span>
                         <input
                             className="password-input block border-2 border-black"
                             type="password"
-                            name="clientPassword"
+                            name="password"
                             title="Passwords must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character"
                             required=""
                             pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"

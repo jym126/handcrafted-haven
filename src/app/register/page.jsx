@@ -1,5 +1,6 @@
 import Header from '../components/header'
 import Footer from '../components/footer'
+import Script from 'next/script'
 import { getParam } from '../components/utils.mjs'
 
 export default function SignUp() {
@@ -9,7 +10,7 @@ export default function SignUp() {
             <Header />
                 <main>
                 <p>Create An Account:</p>
-                <form className="blue-form" method="post" action="/submitregister">
+                <form id="register-form" className="blue-form" method="post" action="/api/submitregister">
                     <fieldset className="password-fieldset">
                         <label className="block">
                         Name<span className="asterisk">*</span>
@@ -57,5 +58,6 @@ export default function SignUp() {
                     </form>
                 </main>
             <Footer />
+            <Script src='/js/register.js' />
         </>
     )}
